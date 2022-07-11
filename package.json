@@ -1,7 +1,7 @@
 {
   "name": "@jovo-community/plugin-badgerific",
   "version": "1.0.0",
-  "description": "A Jovo Framework plugin for badges and achievments.",
+  "description": "A Jovo Framework plugin for badges and achievements using the Badgerific library.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm5/index.js",
   "es2015": "dist/esm2015/index.js",
