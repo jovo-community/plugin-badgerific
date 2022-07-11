@@ -38,11 +38,16 @@ export class BadgerificPlugin extends Plugin<BadgerificPluginConfig> {
 
       jovo.$badges = new Badges(rules, tz);
 
-      const badgeData = jovo.$user.data[this.config.userStorageKey];
+      const defaultData = {
+        systemProps: {},
+        props: {},
+        periods: {},
+        earned: [],
+        bookmarks: {}
+    };
 
-      if (badgeData) {
-        jovo.$badges.setData(badgeData);
-      }
+      const badgeData = jovo.$user.data[this.config.userStorageKey] ?? defaultData;
+      jovo.$badges.setData(badgeData);
 
       if (this.config.autoSession && jovo.$session.isNew) {
         jovo.$badges.startSession();
